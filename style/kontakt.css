@@ -1,0 +1,37 @@
+.main {
+    width: 100%;
+    background-color: #000;
+    border-bottom: 1px solid orange;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.main>.container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.wiersz {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+#map-container {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+#map-container>iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#kontakt {
+    color: #fff;
+    margin-top: 40px;
+}

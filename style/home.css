@@ -1,0 +1,36 @@
+.main {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid orange;
+}
+
+.view {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.view>video {
+    left: 0;
+    top: 0;
+    height: auto;
+    width: 100%;
+    position: absolute;
+}
+
+#tbc {
+    color: orange;
+    font-weight: bolder;
+}
+
+@media (max-width: 100%) {
+
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+        height: 700px;
+    }
+}

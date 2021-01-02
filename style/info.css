@@ -1,0 +1,38 @@
+.main {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+}
+
+.hh {
+    text-align: center;
+}
+
+.pp {
+    padding-left: 20px;
+}
+
+.akapit {
+    padding: 10px;
+}
+
+.dymek {
+    padding-top: 50px;
+}
+
+.komunikat {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.card-body {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.card-body>h5 {
+    text-align: center;
+}
+
+.alert {
+    padding: 20px;
+}

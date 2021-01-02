@@ -1,0 +1,67 @@
+html {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+}
+
+#root {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: orange;
+    font-weight: bolder;
+}
+
+.navbar {
+    background-color: orange;
+}
+
+.navbar a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: white;
+    background-color: rgb(235, 152, 0);
+}
+
+a.logo:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.naglowek {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tytulowy {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.tytul {
+    padding: 20px;
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #a5a5a5;
+    margin: 20px;
+}
+
+.copyright>h5 {
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,74 @@
+.sala {
+    padding-top: 50px;
+}
+
+.rzad {
+    display: block;
+    width: 100%;
+}
+
+.miejsce {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    padding: 5px;
+    margin: 5px;
+    background-color: green;
+}
+
+.miejsce:hover {
+    border-color: orange;
+    cursor: default;
+}
+
+.zajety {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    padding: 5px;
+    margin: 5px;
+    background-color: grey;
+}
+
+.zajety:hover {
+    border-color: orange;
+    cursor: default;
+}
+
+.schody {
+    display: inline-block;
+    width: 5%;
+    padding: 5px;
+    margin: 5px;
+    background-color: blue;
+    text-align: center;
+    cursor: default;
+}
+
+#widownia {
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.req {
+    color: red;
+}
+
+img {
+    width: 95%;
+}
+
+#tyt {
+    text-align: center;
+    font-style: italic;
+    font-weight: 700;
+    padding-top: 40px;
+}
+
+#pustak {
+    display: none;
+}
+
+.karta {
+    padding-bottom: 50px;
+}

@@ -1,0 +1,23 @@
+
+.wiersz {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.wiersz:hover {
+    background-color: #c4c4c4;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+button {
+    background-color: red;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
