@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="pl">
 
@@ -30,37 +31,46 @@
             $id = $_REQUEST["id"];
 
             include '_hasla.php';
-
             $com = mysqli_connect($hostname, $username, $password);
             mysqli_select_db($com, $dbname);
             mysqli_set_charset($com, "utf8");
-
             $query = "SELECT * FROM filmy WHERE ID = $id";
-
             $result = mysqli_query($com, $query);
 
             if ($result) {
                 while ($row = mysqli_fetch_array($result)) {
                     echo
                         '<div class="container">
-                            <h3>"' . $row["Tytuł"] . '"</h3>
-                            <div class="view intro-video">'
-                            . $row["Zwiastun"] .
-                            '</div>
-                        </div>
-                        <div class="container">
-                            <div class="info">
-                                <div><b>Data premiery: </b>' . $row["Data premiery"] . '</div>
-                                <div><b>Czas trwania: </b> ' . $row["Czas"] . ' min</div>
-                                <div><b>Opis: </b></div>
-                                <p>' . $row["Opis"] . '</p>
+                        <div class="row">
+                            <div class="col col-sm-12">
+                                <h3>"' . $row["Tytuł"] . '"</h3>
                             </div>
                         </div>
-                        <div class="container">
-                            <a href="rezerwacja.php?id=' . $row["ID"]  . '">      
-                                <button class="btn mx-auto d-block kup">KUP BILET</button>
-                            </a>
-                        </div>';
+                        <div class="row">
+                            <div class="col col-sm-12 d-flex justify-content-center">
+                            <div class="embed-responsive embed-responsive-16by9 view">'
+                            . $row["Zwiastun"] .
+                            '</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-12">
+                                <div class="info">
+                                    <div><b>Data premiery: </b>' . $row["Data premiery"] . '</div>
+                                    <div><b>Czas trwania: </b> ' . $row["Czas"] . ' min</div>
+                                    <div><b>Opis: </b></div>
+                                    <p>' . $row["Opis"] . '</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-12 d-flex justify-content-center">
+                                <a href="rezerwacja.php?id=' . $row["ID"] . '">      
+                                    <button class="btn mx-auto d-block kup">KUP BILET</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>';
                 }
             }
             ?>

@@ -29,9 +29,7 @@ for (let i = 0; i < 15; i++) {
     rzad.classList.add("rzad")
     for (let j = 0; j < 20; j++) {
         let miejsce = document.createElement("td");
-        // miejsce.classList.add("miejsca")
-        miejsce.style.background = "green";
-        miejsce.style.width = "50";
+        miejsce.classList.add("miejsce")
         miejsce.innerHTML = nr;
         miejsce.id = nr;
         miejsce.setAttribute("stan", "no")
@@ -40,8 +38,8 @@ for (let i = 0; i < 15; i++) {
         rzad.appendChild(miejsce)
         if (j == 9) {
             let schody = document.createElement("td");
-            // schody.classList.add("schody")
-            schody.innerHTML = "-----"
+            schody.classList.add("schody")
+            schody.innerHTML = "---"
             schody.setAttribute("onselectstart", "return false")
             rzad.appendChild(schody)
         }

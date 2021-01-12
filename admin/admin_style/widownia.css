@@ -2,52 +2,47 @@
     padding-top: 50px;
 }
 
+#widownia {
+    width: 100%;
+}
+
 .rzad {
     display: block;
     width: 100%;
 }
 
 .miejsce {
+    width: 3.5%;
     display: inline-block;
     box-sizing: border-box;
     border: 1px solid #000;
-    padding: 5px;
-    margin: 5px;
+    padding: 2px;
+    margin: 2px;
     background-color: green;
-}
-
-.miejsce:hover {
-    border-color: orange;
-    cursor: default;
+    font-size: 90%;
 }
 
 .zajety {
+    width: 3.5%;
     display: inline-block;
     box-sizing: border-box;
     border: 1px solid #000;
-    padding: 5px;
-    margin: 5px;
+    padding: 2px;
+    margin: 2px;
     background-color: grey;
-}
-
-.zajety:hover {
-    border-color: orange;
     cursor: default;
+    font-size: 90%;
 }
 
 .schody {
+    width: 4%;
     display: inline-block;
-    width: 5%;
-    padding: 5px;
-    margin: 5px;
+    box-sizing: border-box;
+    padding: 2px;
+    margin: 2px;
     background-color: blue;
     text-align: center;
     cursor: default;
-}
-
-#widownia {
-    margin: 0 auto;
-    margin-bottom: 50px;
 }
 
 .req {
@@ -56,6 +51,16 @@
 
 img {
     width: 95%;
+}
+
+.form-control {
+    width: 50%;
+}
+
+#formularz {
+    padding-left: 5%;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #tyt {
@@ -69,6 +74,39 @@ img {
     display: none;
 }
 
+.btn {
+    margin-left: 10%;
+}
+
+#pustak {
+    display: none;
+}
+
 .karta {
+    padding-top: 20px;
     padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+    .miejsce {
+        font-size: 50%;
+    }
+    .zajety {
+        font-size: 50%;
+    }
+    .schody {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .miejsce {
+        font-size: 60%;
+    }
+    .zajety {
+        font-size: 60%;
+    }
+    .schody {
+        font-size: 60%;
+    }
 }

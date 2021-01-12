@@ -1,3 +1,4 @@
+<?php include 'admin_pliki_serwerowe/sprawdzanie_sesji.php'; ?>
 <!doctype html>
 <html lang="pl">
 
@@ -43,8 +44,8 @@
                             </div>';
                     } else {
                         echo '<div class="alert alert-info alert-dismissible fade show" role="alert">
-                                <strong>Niepowodzenie!</strong></br>'  . $_REQUEST["error"] .
-                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <strong>Niepowodzenie!</strong></br>'  . $_REQUEST["error"] .'
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>';
@@ -58,11 +59,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div id="formularz">
-                            <form action="admin_pliki_serwerowe/nowy.php" method="POST" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label for="ids"> ID: </label>
-                                    <input id="id" name=id type="number" class="form-control" required>
-                                </div>
+                            <form action="admin_pliki_serwerowe/nowy.php" method="POST" enctype="multipart/form-data">                           
                                 <div class="form-group">
                                     <label for="tytul">Tytuł: </label>
                                     <input id="tytul" name="tytul" type="text" class="form-control" required>

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php include 'pliki_serwerowe/sprawdzanie_sesji.php'; ?>
 <!doctype html>
 <html lang="pl">
 
@@ -17,6 +19,8 @@
 </head>
 
 <body>
+    <?php include 'komponenty/messenger.php'; ?>
+
     <div id="root" class="container-fluid">
         <!-- NAGŁÓWEK -->
         <?php include 'komponenty/header.php'; ?>
@@ -60,38 +64,40 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class=" table-responsive">
-                            <table id="widownia" class="table-bordered "></table>
+                        <div class="align-middle">
+                            <div id="widownia" class="">
+                                <script src="skrypty/rezerwacja.js"></script>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <div id="formularz">
                             <form action="pliki_serwerowe/rezerwuj.php" method="POST">
-                                <input name="id" type="text" value="<?php $id = $_REQUEST["id"];
-                                                                    echo $id; ?>" style="display: none;" required>
+                                <input name="film_id" type="text" value="<?php echo $_REQUEST["id"]; ?>" style="display: none;" required>
+                                <input name="user_id" type="text" value="<?php echo $_SESSION['id']; ?>" style="display: none;" required>
                                 <div class="form-group">
-                                    <label for="seats"><span class="req">*</span> Miejsca: </label>
+                                    <label for="seats"><span class="req">*</span> Miejsca: (wybierz klikając powyżej)</label>
                                     <input id="seats" name="seats" type="text" class="form-control" placeholder="miejsce1,miejsce2..." value="" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="name"><span class="req">*</span> Imie i nazwisko: </label>
-                                    <input id="name" name="name" type="text" class="form-control" placeholder="Jan Kowalski" required>
+                                    <input id="name" name="name" type="text" class="form-control" value='<?php echo $_SESSION['nazwa']; ?>' required>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone"><span class="req">*</span> Numer telefonu: </label>
-                                    <input id="phone" name="phone" type="number" class="form-control" placeholder="123456789" required>
+                                    <input id="phone" name="phone" type="number" class="form-control" value='<?php echo $_SESSION['numer']; ?>' required>
                                     <small id="smallphone" class="form-text text-muted">Nie udostępnimy nikomu twojego numeru.</small>
                                 </div>
-                                <div class="form-check">
+                                <!-- <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="check" required>
                                     <label class="form-check-label" for="check">Przeczytałam(em) i akceptuję Regulamin rezerwacji i zakupu biletów on-line <span class="req">*</span></label>
-                                </div>
-                                <p>* Pola wymagane</p>
+                                </div> -->
+                                <p><span class="req">*</span> Pola wymagane</p>
                                 <button type="submit" class="btn btn-primary">REZERWUJ</button>
                             </form>
                         </div>
@@ -102,8 +108,6 @@
         <!-- STOPKA -->
         <?php include 'komponenty/footer.php'; ?>
     </div>
-
-    <script src="skrypty/rezerwacja.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

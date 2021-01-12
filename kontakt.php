@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="pl">
 
@@ -12,12 +13,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet" crossorigin="anonymous">
     <style>
-         <?php include 'style/main.css'; ?>
-        <?php include 'style/kontakt.css'; ?>
+        <?php include 'style/main.css'; ?><?php include 'style/kontakt.css'; ?>
     </style>
 </head>
 
 <body>
+    <?php include 'komponenty/messenger.php'; ?>
+
     <div id="root" class="container-fluid">
         <!-- NAGŁÓWEK -->
         <?php include 'komponenty/header.php'; ?>

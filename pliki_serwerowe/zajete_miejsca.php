@@ -4,8 +4,8 @@ $id = $_REQUEST["id"];
 $tytul = "";
 $res = [];
 
-
 include '../_hasla.php';
+
 $com = mysqli_connect($hostname, $username, $password);
 mysqli_select_db($com, $dbname);
 mysqli_set_charset($com, "utf8");
@@ -33,3 +33,4 @@ if ($result) {
     }
 }
 echo $wypisz;
+?>

@@ -1,5 +1,6 @@
-<?php 
-$hostname = "mysql.cba.pl";
-$username = "kino10";
-$password = "StadniK2020";
-$dbname = "kinomaniak20";
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "kino";
+$adres_strony = "localhost";

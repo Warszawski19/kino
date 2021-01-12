@@ -1,4 +1,6 @@
 <?php
+session_start();
+include '../pliki_serwerowe/sprawdzanie_sesji.php';
 
 function input($data)
 {
@@ -7,56 +9,43 @@ function input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
-#-------------------- Dane z formularza
+// POBRANIE DANYCH Z FORMULARZA
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = input($_POST["id"]);
+    $id_filmu = input($_POST["film_id"]);
     $seats = input($_POST["seats"]);
-    $name = input($_POST["name"]);
-    $phone = input($_POST["phone"]);
+    // $name = input($_POST["name"]);
+    // $phone = input($_POST["phone"]);
+    $id_usera = input($_POST['user_id']);
 }
 
-#----------------- Pobranie tytułu filmu 
 include '../_hasla.php';
 
-//Sprawdzenie tytułu na podstawie id pobranego z url
-$title = "";
+// POBRANIE TYTUŁU NA PODSTWIE ID FILMU
 $com = mysqli_connect($hostname, $username, $password);
 mysqli_select_db($com, $dbname);
 mysqli_set_charset($com, "utf8");
+$query = "SELECT * FROM `filmy` WHERE ID = $id_filmu";
+$wynik = mysqli_query($com, $query);
 
-$query = "SELECT * FROM `filmy` WHERE ID = $id";
-
-$result = mysqli_query($com, $query);
-
-if ($result) {
-    while ($row = mysqli_fetch_array($result)) {
+$title = "";
+if ($wynik) {
+    while ($row = mysqli_fetch_array($wynik)) {
         $title = $row["Tytuł"];
     }
 }
 
-$valid = 1;
-//Walidacja numeru telefonu
-if (strlen($phone) != 9 && !is_int($phone)) {
-    $valid = 0;
+// DODANIE REZERWACJI
+$zapyt = "INSERT INTO `rezerwacje`(`Tytuł`, `Miejsca`, `ID_uzytkownika`) VALUES ('$title', '$seats', '$id_usera')";
+$result = mysqli_query($com, $zapyt);
+
+// PRZEKIEROWANIE DO ODPOWIEDNIEJ STRONY
+if ($result == 1) {
+    $id_rezerwacji = mysqli_insert_id($com);
+    header("Location: ../info.php?rez=" . $id_rezerwacji . "");
+}
+else{
+    header("Location: ../info.php");
 }
 
-if ($valid == 1) {
-    // Wstawienie danych do tabeli
-    $com = mysqli_connect($hostname, $username, $password);
-    mysqli_select_db($com, $dbname);
-    mysqli_set_charset($com, "utf8");
-
-    $ran = rand(1, 100) + rand(1, 100) + rand(1, 100);
-
-    $query = "INSERT INTO `rezerwacje`(`ID`,`Tytuł`, `Imie i nazwisko`, `Numer telefonu`, `Miejsca`) VALUES ('$ran', '$title', '$name', '$phone', '$seats')";
-    $result = mysqli_query($com, $query);
-
-    if ($result == 1) {
-        header("Location: ../info.php?stat=" . $result . "&id=" . $ran);
-    } else {
-        header("Location: ../info.php?stat=" . $result);
-    }
-} else {
-    header("Location: ../info.php?stat=0");
-}
-exit;
+mysqli_close($com);
+?>

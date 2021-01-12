@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+
+body {
+    margin: 0;
+}
+
+#strona {
+    width: 20cm;
+    font-family: 'Xanh Mono', monospace;
+}
+
+.sztuka {
+    width: 100%;
+    height: 6cm;
+    box-sizing: border-box;
+    padding-bottom: 0.5cm;
+    padding-top: 0.5cm;
+    border-bottom: 2px dashed black;
+}
+
+.tytul {
+    width: 100%;
+    height: 1cm;
+    text-align: center;
+    background-color: black;
+    color: orange;
+    line-height: 200%;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.lewa {
+    width: 60%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0cm 0cm 0cm 1cm;
+}
+
+.prawa {
+    width: 40%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0cm 1cm 0cm 0cm;
+}
+
+
+p {
+    font-family: 'Xanh Mono', monospace;
+}
+
+.stopka {
+    clear: both;
+    width: 100%;
+    height: 1cm;
+    text-align: center;
+    background-color: orange;
+    color: black;
+    line-height: 200%;
+    font-size: 20px;
+}

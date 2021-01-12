@@ -16,27 +16,83 @@ h1 {
     font-weight: bolder;
 }
 
+.naglowek p {
+    color: #fff;
+}
+
+.odstep {
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+.us{
+    color: white;
+    display: block;
+}
+
+p.us{
+    padding-top: 15px;
+    text-align: center;
+}
+a.us{
+    text-decoration: none;
+}
+
+.us:hover {
+    color: orange;
+}
+
+.lin{
+    color: white;
+    display: block;
+}
+
+p.lin{
+    padding-top: 15px;
+    text-align: center;
+}
+a.lin{
+    text-decoration: none;
+}
+
+.lin:hover {
+    color: orange;
+}
+
+a.logo:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
 .navbar {
     background-color: orange;
+}
+
+.navbar>button>span {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar button:hover {
+    color: white;
+    background-color: rgb(235, 152, 0);
 }
 
 .navbar a {
     color: black;
     font-size: 16px;
     text-decoration: none;
-    display: inline-block;
-    padding: 10px;
+    text-align: center;
+    /* display: inline-block; */
     font-weight: bold;
 }
 
 .navbar a:hover {
     color: white;
     background-color: rgb(235, 152, 0);
-}
-
-a.logo:hover {
-    text-decoration: underline;
-    text-decoration-color: white;
 }
 
 .naglowek {

@@ -1,0 +1,78 @@
+.main {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+}
+
+.hh {
+    text-align: center;
+}
+
+.pp {
+    padding-left: 20px;
+}
+
+.akapit {
+    padding: 10px;
+}
+
+.dymek {
+    padding-top: 50px;
+}
+
+.komunikat {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.gora {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.tekst {
+    /* margin-top: 30px; */
+    text-align: left;
+}
+
+#lista {
+    margin-top: 20px;
+}
+
+.card-body>h4 {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.okno {
+    padding-top: 10px;
+}
+
+.wpis {
+    width: 100%;
+}
+
+.wpis>.card-header {
+    background-color: orange;
+}
+
+.wpis>.card-body {
+    background-color: white;
+    border: 1px solid orange;
+}
+
+.wpis>.card-body>button {
+    width: 50%;
+}
+
+.rezi {
+    text-align: center;
+}
+
+.kliki{
+    margin-top: 5px;
+}
+
+.alert {
+    padding: 20px;
+}

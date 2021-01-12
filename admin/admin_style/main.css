@@ -15,6 +15,18 @@ html {
     padding-bottom: 20px;
 }
 
+.naglowek p {
+    color: white;
+}
+
+.naglowek a {
+    color: white;
+}
+
+.naglowek a:hover {
+    color: orange;
+}
+
 h1 {
     text-align: center;
     color: orange;

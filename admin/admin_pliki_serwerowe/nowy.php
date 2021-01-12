@@ -8,7 +8,7 @@ function input($data)
     return $data;
 }
 
-#-------------------- Dane z formularza
+// POBRANIE DANYCH Z FORMULARZA
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = input($_POST["id"]);
     $tytul = input($_POST["tytul"]);
@@ -20,18 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $zwiastun = htmlspecialchars(input($_POST["zwiastun"]));
 }
 
-#Wpisanie reerwacji do bazy danych
 include '../_hasla.php';
 
 $com = mysqli_connect($hostname, $username, $password);
 mysqli_select_db($com, $dbname);
 mysqli_set_charset($com, "utf8");
-
-$ran = rand(1, 100) + rand(1, 100);
-$query = "INSERT INTO `filmy` (`ID`,`Tytuł`,`Gatunek`, `Czas`, `Wersja`,`Data premiery`, `Opis`, `Zwiastun`) VALUES ('$id', '$tytul','$gatunek', '$czas', '$wersja', '$data','$opis','$zwiastun')";
+$query = "INSERT INTO `filmy` (`Tytuł`,`Gatunek`, `Czas`, `Wersja`,`Data premiery`, `Opis`, `Zwiastun`) VALUES ('$tytul','$gatunek', '$czas', '$wersja', '$data','$opis','$zwiastun')";
 $result = mysqli_query($com, $query);
 
-#Upload plakatu
+// UPLOAD ZDJĘCIA PLAKATU
 $target_dir = "../../okladki/";
 $target_file = $target_dir . $_FILES["plakat"]["name"];
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -61,7 +58,6 @@ if ($_FILES["plakat"]["size"] > 30000) {
     $uploadOk = 0;
 }
 
-echo $imageFileType;
 // Sprawdzenie czy plik ma odpowiednie rozszerzenie
 if ($imageFileType != "jpg") {
     $error  =  "Dozwolone są tylko pliki JPG.";
@@ -77,3 +73,4 @@ if ($uploadOk == 0) {
         header("Location: ../dodaj_film.php?up=" . $uploadOk);
     }
 };
+?>

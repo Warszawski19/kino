@@ -1,0 +1,32 @@
+.wpis {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid rgb(235, 152, 0);
+}
+
+.akapit {
+    padding: 10px;
+}
+
+.main {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    padding: 100px 0 200px 0;
+}
+
+.form-control {
+    width: 120%;
+}
+
+#formularz>a {
+    text-align: center;
+}
+
+button {
+    padding-bottom: 20px;
+}
+
+.alert {
+    width: 70%;
+}
+

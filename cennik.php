@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="pl">
 
@@ -7,18 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Michał Warszawski">
 
-    <title>CINEMA - Cennik</title>
+    <title>CINEMA - Logowanie</title>
     <?php include 'komponenty/logo.php'; ?>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet" crossorigin="anonymous">
     <style>
-        <?php include 'style/main.css'; ?>
-        <?php include 'style/cennik.css'; ?>
+        <?php include 'style/main.css'; ?><?php include 'style/cennik.css'; ?>
     </style>
 </head>
 
 <body>
+    <?php include 'komponenty/messenger.php'; ?>
+
     <div id="root" class="container-fluid">
         <!-- NAGŁÓWEK -->
         <?php include 'komponenty/header.php'; ?>
